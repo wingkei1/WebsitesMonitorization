@@ -20,4 +20,24 @@ public class WebDAO extends GenericDAO{
         return web;
     }
 
+    public void deleteWebByID(int id) throws SQLException {
+        String query = "DELETE FROM Webs WHERE id ="+id;
+        try (Connection conn = connector.getConnection()) {
+            queryRunner.update(conn, query);
+
+        }
+
+        return;
+    }
+
+    public void updateWebByID(int id, Web web) throws SQLException {
+        String query = "UPDATE Webs SET url ="+web.getUrl()+", nombre="+web.getNombreWeb()+
+                ", tipo="+web.getTipoWeb() +", uodate="+web.getUpdate()+" WHERE id ="+id;
+        try (Connection conn = connector.getConnection()) {
+            queryRunner.update(conn, query);
+        }
+
+        return;
+    }
+
 }

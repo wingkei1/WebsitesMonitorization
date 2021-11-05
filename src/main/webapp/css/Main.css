@@ -1,0 +1,18 @@
+.table100-head th{
+  font-family: OpenSans-Regular;
+  font-size: 18px;
+  color: #fff;
+  line-height: 1.2;
+  font-weight: unset;
+}
+
+table thead tr {
+  height: 60px;
+  background: #36304a;
+  width: 1000px;
+}
+
+.table-responsive {
+  width: 1700px;
+  padding: 100px 100px;
+}

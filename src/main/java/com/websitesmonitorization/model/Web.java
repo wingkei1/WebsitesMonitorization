@@ -1,12 +1,14 @@
 package com.websitesmonitorization.model;
 
+import java.util.Date;
+
 public class Web {
 
 	String url;
 	String nombreWeb;
 	Integer idWeb;
 	String tipoWeb;
-	String update;
+	java.util.Date update;
 	
 	public String getUrl() {
 		return url;
@@ -32,10 +34,10 @@ public class Web {
 	public void setTipoWeb(String tipoWeb) {
 		this.tipoWeb = tipoWeb;
 	}
-	public String getUpdate() {
+	public Date getUpdate() {
 		return update;
 	}
-	public void setUpdate(String update) {
+	public void setUpdate(Date update) {
 		this.update = update;
 	}
 	

@@ -8,7 +8,7 @@ import java.sql.Connection;
 
 @Component
 public class Connector {
-    public static final String DB_URL = "jdbc:mysql://ec2-54-163-134-67.compute-1.amazonaws.com:3306/?user=root";
+    public static final String DB_URL = "jdbc:mysql://ec2-54-163-134-67.compute-1.amazonaws.com:3306/?user=root?currentSchema=profundiacion";
 
     public Connection getConnection() {
         Connection conn = null;

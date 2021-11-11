@@ -20,9 +20,22 @@ public class WebController {
 	@GetMapping(value = "/{id}")
 	public ResponseEntity<Web> getWebById(@PathVariable int id) throws SQLException {
 
-		WebDAO webDAO = new WebDAO();
-		Web web = webDAO.getWebByID(123456);
 		
+		WebDAO webDAO = new WebDAO();
+		Web web = webDAO.getWebByID(id);
+		
+		return new ResponseEntity<Web>(web, HttpStatus.OK);
+		
+	}
+	
+	@GetMapping(value = "mock/{id}")
+	public ResponseEntity<Web> MockgetWebById(@PathVariable int id) throws SQLException {
+
+		
+		WebDAO webDAO = new WebDAO();
+		Web web = new Web();
+		web.setIdWeb(1);
+				
 		return new ResponseEntity<Web>(web, HttpStatus.OK);
 		
 	}
@@ -37,14 +50,19 @@ public class WebController {
 		
 	}
 	
-	@GetMapping(value = "/{id}")
-	public ResponseEntity<String> updateWebByID(@PathVariable int id) throws SQLException {
+	@PutMapping(value = "/{id}")
+	public ResponseEntity<String> putWebByID(@PathVariable int id) throws SQLException {
 
 		WebDAO webDAO = new WebDAO();
 		Web web = webDAO.updateWebByID(123456);
 		
 		return new ResponseEntity<Web>(web, HttpStatus.OK);
 		
-	}*/
+	}
+	
+	@PutMapping(value = "/{id}")
+	public ResponseEntity<String> postWebByID(@PathVariable int id) throws SQLException {
+
+	*/
 	
 }

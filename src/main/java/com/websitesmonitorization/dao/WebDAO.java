@@ -36,7 +36,7 @@ public class WebDAO extends GenericDAO{
      */
     public int insertWeb() throws SQLException {
         String query1 = "INSERT INTO webs (url,nombre, tipo, `update`) VALUES (\"https://www.oracle.com/es/index.html\", \"oracle\", \"informatica\", \"2021-11-09 14:04:05\");";
-        String query2= "SELECT LAST_INSERT_ID();";
+        String query2 = "SELECT LAST_INSERT_ID();";
         int id=-1;
         try (Connection conn = connector.getConnection()) {
             id=queryRunner.insert(conn, query1, new ScalarHandler<Integer>());

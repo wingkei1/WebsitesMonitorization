@@ -11,6 +11,6 @@ public class GenericDAO {
     @Autowired
     protected Connector connector;
 
-    @Autowired
+    //@Autowired
     protected QueryRunner queryRunner;
 }

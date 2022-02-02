@@ -22,7 +22,7 @@ import org.apache.commons.dbutils.handlers.ScalarHandler;
 import java.util.List;
 
 @RestController
-@RequestMapping("/web")
+@RequestMapping("/usuario")
 public class UsuarioController {
 
 	/*

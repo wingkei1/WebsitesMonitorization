@@ -44,7 +44,9 @@ public class TestBuscadorTest {
   public void tearDown() {
     driver.quit();
   }
-  @Test
+  
+  @SuppressWarnings("deprecation")
+@Test
   public void testBuscador() {
     driver.get("http://localhost:8080/?");
     driver.manage().window().setSize(new Dimension(1382, 744));

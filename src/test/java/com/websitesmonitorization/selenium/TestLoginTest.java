@@ -24,11 +24,10 @@ import org.openqa.selenium.Keys;
 import java.util.*;
 import java.net.MalformedURLException;
 import java.net.URL;
-public class TestDashboardTest {
+public class TestLoginTest {
   private WebDriver driver;
   private Map<String, Object> vars;
   JavascriptExecutor js;
-  
   @Before
   public void setUp() {
 	System.setProperty("webdriver.chrome.driver", "src/test/java/chromedriver/chromedriver.exe");
@@ -37,17 +36,22 @@ public class TestDashboardTest {
     //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
     
   }
-  
   @After
   public void tearDown() {
     driver.quit();
   }
+  
   @SuppressWarnings("deprecation")
   @Test
-  public void testDashboard() {
-    driver.get("http://localhost:8080/?#");
+  public void testLogin() {
+    driver.get("http://localhost:8080/login");
     driver.manage().window().setSize(new Dimension(1382, 744));
-    driver.findElement(By.cssSelector(".nav-link")).click();
-    assertThat(driver.findElement(By.cssSelector(".nav-link")).getText(), is("Dashboard\\\\n(current)"));
+    driver.findElement(By.cssSelector(".input-group:nth-child(1) > .form-control")).click();
+    driver.findElement(By.cssSelector(".input-group:nth-child(1) > .form-control")).sendKeys("laurartiles");
+    driver.findElement(By.cssSelector(".input-group:nth-child(2) > .form-control")).click();
+    driver.findElement(By.cssSelector(".input-group:nth-child(2) > .form-control")).sendKeys("laurartiles");
+    driver.findElement(By.cssSelector(".row > input")).click();
+    driver.findElement(By.cssSelector(".btn")).click();
+    assertThat(driver.findElement(By.cssSelector("th:nth-child(1)")).getText(), is("Nombre"));
   }
 }
